@@ -1,19 +1,32 @@
 import React from 'react';
-import { Pressable, View, Text } from 'react-native';
+import { Pressable, View, Text, Image } from 'react-native';
 
 import { styles } from './HomeStyle';
 
-export function Home({navigation}:any) {
-
-  function navToGallery(){
+export function Home({ navigation }: any) {
+  function navToGallery() {
     navigation.navigate('gallery');
   }
+
   return (
     <View style={styles.container}>
-      <Text>HOME</Text>
-        <Pressable style={styles.botao} onPress={navToGallery}>
-            <Text style={styles.textoBotao}>Ir para a Galleria</Text>
-        </Pressable>
+      <Text style={styles.title}>HOME</Text> {/* Agora styles.title existe */}
+      
+      <Pressable style={styles.botao} onPress={navToGallery}>
+        <Image 
+          source={require('../../assets/images.jpg')} 
+          style={{ width: 300, height: 300 }}
+        />
+        <Text style={styles.textoBotao}>Ir para a Galeria</Text>
+      </Pressable>
+
+      <Pressable style={styles.botao} onPress={() => navigation.navigate('profile')}>
+        <Text style={styles.textoBotao}>Ir para Perfil</Text>
+      </Pressable>
+
+      <Pressable style={styles.botao} onPress={() => navigation.navigate('settings')}>
+        <Text style={styles.textoBotao}>Ir para Configurações</Text>
+      </Pressable>
     </View>
   );
 }

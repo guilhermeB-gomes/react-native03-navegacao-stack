@@ -3,21 +3,20 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#00ff00',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
-  // ADICIONE ESTE ESTILO:
-  title: {
+  texto: {
+    color: '#fff',
     fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20
   },
   botao: {
     backgroundColor: '#000',
     padding: 15,
-    margin: 10
+    marginTop: 20,
   },
   textoBotao: {
-    color: '#fff'
-  }
+    color: '#fff',
+  },
 });
